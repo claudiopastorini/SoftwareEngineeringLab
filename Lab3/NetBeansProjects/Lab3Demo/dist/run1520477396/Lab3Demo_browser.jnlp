@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Lab3Demo_browser.jnlp">
+  <information>
+    <title>Lab3Demo</title>
+    <vendor>biar</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Lab3Demo.jar" size="7341" download="eager" />
+    <jar href="lib/activemq-all-5.14.5.jar" size="16211254" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="it.pastorini.lab3.demo.App"  name="Lab3Demo" >
+  </applet-desc>
+  <update check="always"/>
+</jnlp>

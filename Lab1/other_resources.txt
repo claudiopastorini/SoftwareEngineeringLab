@@ -1,0 +1,3 @@
+https://www.baeldung.com/introduction-to-apache-cxf
+https://www.javacodegeeks.com/2014/12/jaxb-tutorial-xml-binding.html
+https://www.baeldung.com/maven

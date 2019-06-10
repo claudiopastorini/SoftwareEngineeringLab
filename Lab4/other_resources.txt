@@ -1,0 +1,2 @@
+https://www.slideshare.net/rahula24/amqp-basic
+https://www.slideshare.net/somic/introduction-to-amqp-messaging-with-rabbitmq

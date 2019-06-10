@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://server.soap.pastorini.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ArtistsCatalogImplService" targetNamespace="http://server.soap.pastorini.it/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server.soap.pastorini.it/" elementFormDefault="unqualified" targetNamespace="http://server.soap.pastorini.it/" version="1.0">
+
+  <xs:element name="getArtists" type="tns:getArtists"/>
+
+  <xs:element name="getArtistsResponse" type="tns:getArtistsResponse"/>
+
+  <xs:element name="getBios" type="tns:getBios"/>
+
+  <xs:element name="getBiosResponse" type="tns:getBiosResponse"/>
+
+  <xs:element name="getNumberOfArtists" type="tns:getNumberOfArtists"/>
+
+  <xs:element name="getNumberOfArtistsResponse" type="tns:getNumberOfArtistsResponse"/>
+
+  <xs:complexType name="getArtists">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getArtistsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:artistImpl"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="artistImpl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="surname" type="xs:string"/>
+      <xs:element name="age" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBios">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBiosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNumberOfArtists">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getNumberOfArtistsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getBiosResponse">
+    <wsdl:part element="tns:getBiosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBios">
+    <wsdl:part element="tns:getBios" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNumberOfArtists">
+    <wsdl:part element="tns:getNumberOfArtists" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getArtists">
+    <wsdl:part element="tns:getArtists" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getArtistsResponse">
+    <wsdl:part element="tns:getArtistsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNumberOfArtistsResponse">
+    <wsdl:part element="tns:getNumberOfArtistsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ArtistsCatalog">
+    <wsdl:operation name="getArtists">
+      <wsdl:input message="tns:getArtists" name="getArtists">
+    </wsdl:input>
+      <wsdl:output message="tns:getArtistsResponse" name="getArtistsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBios">
+      <wsdl:input message="tns:getBios" name="getBios">
+    </wsdl:input>
+      <wsdl:output message="tns:getBiosResponse" name="getBiosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfArtists">
+      <wsdl:input message="tns:getNumberOfArtists" name="getNumberOfArtists">
+    </wsdl:input>
+      <wsdl:output message="tns:getNumberOfArtistsResponse" name="getNumberOfArtistsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArtistsCatalogImplServiceSoapBinding" type="tns:ArtistsCatalog">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getArtists">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getArtists">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getArtistsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBios">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBios">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBiosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfArtists">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getNumberOfArtists">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNumberOfArtistsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArtistsCatalogImplService">
+    <wsdl:port binding="tns:ArtistsCatalogImplServiceSoapBinding" name="ArtistsCatalogImplPort">
+      <soap:address location="http://localhost:8080/ArtistsCatalog/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
